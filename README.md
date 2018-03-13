@@ -3,6 +3,11 @@
 
 * Node + npm
 * Apache server
+* My sql Database
+
+#Database
+import database file in your Mysql.
+
 ## Development server
   $ node server
 
