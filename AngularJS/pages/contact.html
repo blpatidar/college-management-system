@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="col-md-12">
+        <img src="./resource/contactform.jpg" width="120%" alt="contact">
+    </div>
+</div>
+<div class="contact-form-area pad120 bg-color-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title text-center">
+                    <h3 class="title">
+                        <b>Keep in touch with us</b>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <form id="contact-form" action="" class="contact-form" data-toggle="validator" role="form">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="name">Name
+                                    <span>*</span>
+                                </label>
+                                <input type="text" class="form-control" id="name" required data-error="Enter your name">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="email">Email
+                                    <span>*</span>
+                                </label>
+                                <input type="email" class="form-control" id="email" required data-error="Enter valid email address">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" class="form-control" id="msg_subject" data-error="Enter your message subject">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" class="form-control" rows="6" required data-error="Enter your message"></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <button id="submit" type="submit" class="btn btn-primary hvr-in" data-error="Write your message">Send Message</button>
+                        </div>
+                    </div>
+                    <div id="msgalert" class="hidden"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="container">
+    <form class="form-horizontal" ng-submit="submit()">
+        <fieldset>
+            <legend style="color:darkmagenta; border-bottom-color:darkmagenta">
+                <center>
+                    <h2>
+                        <b>-:College Form:-</b>
+                    </h2>
+                </center>
+            </legend>
+            <br>
+            <div class="form-group">
+                <label class="col-md-4 control-label">College Name</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input name="name" placeholder="College Name" class="form-control" ng-model="form.name" type="text" ng-required="">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Address</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-home" style="font-size:20px;"></i>
+                        </span>
+                        <textarea name="address" style="resize:none" cols="22" rows="3" class="form-control" ng-model="form.address" required></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">State</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <select ng-model="form.state">
+                        <option value="">--Select State--</option>
+                        <option value="M.P.">M.P.</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">City</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <select ng-model="form.city">
+                        <option value="">--Select City--</option>
+                        <option value="Mandsaur">Mandsaur</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Phone No</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-earphone"></i>
+                        </span>
+                        <input name="phoneNo" placeholder="Phone No" pattern="(0|91)?[7-9][0-9]{9}" class="form-control" ng-model="form.phoneNo"
+                            type="text" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4">
+                    <br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <button type="submit" class="btn btn-warning">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT
+                        <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                </div>
+                <div class="col-lg-12 col-sm-12 col-xs-12 alert alert-success" ng-show="successMessagebool ">
+                    <strong>{{successMessage }}</strong>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

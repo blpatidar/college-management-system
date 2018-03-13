@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        img {
+            width: 50px;
+            vertical-align: 10px;
+            margin-left: 20px;
+
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        form {
+            border: 3px solid grey;
+            margin: 2%;
+            width: 25%;
+        }
+
+        h2 {
+            margin: 2%;
+        }
+
+        .input-sm {
+            height: 30px;
+            padding: 4px 7px;
+            font-size: 12px;
+            line-height: 1.5;
+            border-radius: 7px;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #337ab7;
+            border-color: #2e6da4;
+            margin-left: 15px;
+        }
+
+        button {
+            background-color: rgb(76, 175, 142);
+            color: white;
+            padding: 1px 2px;
+            margin: 15px 0;
+            border: none;
+            cursor: pointer;
+            width: 16%;
+        }
+
+
+        button:hover {
+            opacity: 0.8;
+            background-color: #f44336;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>
+        <b>Login Form</b>
+    </h2>
+
+    <form action="/Login" method="post" class="form-horizontal">
+        <div class="imgcontainer">
+            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <div class="input-group input-sm col-sm-3">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-user"></i>
+                </span>
+                <input id="loginid" type="text" class="form-control" name="loginid" placeholder="LoginId" required>
+            </div>
+
+            <div class="input-group input-sm col-sm-3">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-user"></i>
+                </span>
+                <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
+            </div>
+            <div class="input-group">
+
+                <a href="#">Forgot Password?</a>
+            </div>
+
+        </div>
+        <button type="submit" id="button" class="btn-primary input-sm">Login</button>
+        <button type="submit" class="btn-primary input-sm">SignUp</button>
+    </form>
+
+</body>
+
+</html>
