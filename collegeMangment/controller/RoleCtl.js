@@ -20,7 +20,6 @@ class RoleCtl extends BaseCtl {
         return RoleBean;
     };
     getModel() {
-        console.log("in role getmodel");
         return RoleModel;
     };
 

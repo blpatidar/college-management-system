@@ -4,7 +4,6 @@ app.factory("AddMarksheetFactory", function ($http, $q) {
         addMarksheet: function (form) {
             var def = $q.defer();
             $http({ "url": "http://127.0.0.1:3000/Marksheet", "method": "POST", "data": form }).then(function (res) {
-                console.log(res.data);
                 def.resolve(res.data);
             }, function (error) {
                 console.log(error);
@@ -15,7 +14,6 @@ app.factory("AddMarksheetFactory", function ($http, $q) {
         list: function () {
             var def = $q.defer();
             $http({ "url": "http://127.0.0.1:3000/Marksheet", "method": "GET" }).then(function (res) {
-                console.log(res.data);
                 def.resolve(res.data);
             }, function (error) {
                 console.log(error);
@@ -26,7 +24,6 @@ app.factory("AddMarksheetFactory", function ($http, $q) {
         getMarks: function () {
             var def = $q.defer();
             $http({ "url": "http://127.0.0.1:3000/StudentMarks", "method": "GET" }).then(function (res) {
-                console.log(res.data);
                 def.resolve(res.data);
             }, function (error) {
                 console.log(error);
@@ -36,8 +33,7 @@ app.factory("AddMarksheetFactory", function ($http, $q) {
         },
         updateMarks: function (form) {
             var def = $q.defer();
-            $http({ "url": "http://127.0.0.1:3000/Marksheet", "method": "POST", "data":form }).then(function (res) {
-                console.log(res.data);
+            $http({ "url": "http://127.0.0.1:3000/Marksheet", "method": "POST", "data": form }).then(function (res) {
                 def.resolve(res.data);
             }, function (error) {
                 console.log(error);

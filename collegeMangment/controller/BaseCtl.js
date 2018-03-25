@@ -7,13 +7,11 @@ class BaseCtl {
         return null;
     };
     getModel() {
-        console.log("in base getmodel");
         return null;
 
     }
 
     service(request, res) {
-        console.log("in service " + request.method);
         if (request.method == 'GET') {
             this.display(request, res);
         } else {
@@ -22,16 +20,14 @@ class BaseCtl {
     }
 
     display(request, res) {
-        console.log("in display " + request.method);
         var model = this.getModel();
         model.list().then(response => {
-            console.log(response);
             res.setHeader('Content-Type', 'application/json');
             res.send(JSON.stringify({ "success": true, "message": "Record has been display successfully.", "response": response }));
         }).catch(err => {
             console.log(err);
         });
-          }
+    }
 
     submit(request, res) {
         var operation = request.body.operation;
@@ -41,7 +37,7 @@ class BaseCtl {
         if (operation == "add") {
 
             model.add(bean).then(response => {
-                console.log(response);
+
                 res.setHeader('Content-Type', 'application/json');
                 res.send(JSON.stringify({ "success": true, "message": "Record has been added successfully.", "response": response }));
             }).catch(err => {
@@ -50,7 +46,7 @@ class BaseCtl {
         };
         if (operation == "update") {
             model.update(bean).then(response => {
-                console.log(response);
+
                 res.setHeader('Content-Type', 'application/json');
                 res.send(JSON.stringify({ "success": true, "message": "Record has been updated successfully.", "response": response }));
             }).catch(err => {
@@ -59,7 +55,7 @@ class BaseCtl {
         }
         if (operation == "delete") {
             model.delete(bean).then(response => {
-                console.log(response);
+
                 res.setHeader('Content-Type', 'application/json');
                 res.send(JSON.stringify({ "success": true, "message": "Record has been deleted successfully.", "response": response }));
             }).catch(err => {
@@ -68,7 +64,7 @@ class BaseCtl {
         }
         if (operation == "search") {
             model.search(bean).then(response => {
-                console.log(response);
+
                 res.setHeader('Content-Type', 'application/json');
                 res.send(JSON.stringify({ "success": true, "message": "Record matched", "response": response }));
             }).catch(err => {
@@ -77,7 +73,7 @@ class BaseCtl {
         }
         if (operation == "list") {
             model.list(bean).then(response => {
-                console.log(response);
+
                 res.setHeader('Content-Type', 'application/json');
                 res.send(JSON.stringify({ "success": true, "message": "Record matched", "response": response }));
             }).catch(err => {
@@ -117,7 +113,7 @@ class BaseCtl {
         }
         if (operation == "userAuthenticate") {
             model.userAuthenticate(bean.loginId).then(response => {
-                console.log(response)
+               
                 if (response.length > 0) {
                     console.log("in if " + response.length);
                     res.setHeader('Content-Type', 'application/json');

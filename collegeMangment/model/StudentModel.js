@@ -9,7 +9,6 @@ class StudentModel {
         return new Promise((resolve, reject) => {
 
             var sql = "INSERT INTO clg_students (firstName,lastName,dob,mobileNo,email,password,confirmPassword,collegeId,collegeName) VALUES ('" + StudentBean.firstName + "','" + StudentBean.lastName + "','" + StudentBean.dob + "','" + StudentBean.mobileNo + "','" + StudentBean.email + "','" + StudentBean.password + "','" + StudentBean.confirmPassword + "','" + StudentBean.collegeId + "','" + StudentBean.collegeName + "')";
-            console.log(sql);
             Datasource.executeInsert(sql).then(response => {
                 return resolve(response);
             }).catch(err => {
@@ -72,7 +71,7 @@ class StudentModel {
 
     };
     loginAuthenticate(email, password) {
-        console.log("in authenticate");
+       
         return new Promise((resolve, reject) => {
             var sql = "SELECT * FROM clg_students where email='" + email + "' and password= '" + password + "'"
             Datasource.executeList(sql).then(response => {
@@ -84,7 +83,7 @@ class StudentModel {
     };
 
     emailAuthenticate(email) {
-        console.log("in authenticate");
+       
         return new Promise((resolve, reject) => {
             var sql = "SELECT * FROM clg_students where email='" + email + "'";
             Datasource.executeList(sql).then(response => {

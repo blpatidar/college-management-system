@@ -1,16 +1,14 @@
 app.controller('StaffLoginCtl', function ($scope, $location, $cookieStore, CollegeFactory) {
     $scope.form = { "operation": "loginAuthenticate" };
     $scope.submit = function () {
-        console.log($scope.form.email);
         CollegeFactory.staffLogin($scope.form).then(function (res) {
             $scope.response = res;
-            console.log($scope.response);
-            $cookieStore.put("user",{"success":"!staff","name":$scope.form.email});
+            $cookieStore.put("user", { "success": "!staff", "name": $scope.form.email });
             if ($scope.response.success) {
-                $cookieStore.put("user",{"success":"staff","name":$scope.form.email});
+                $cookieStore.put("user", { "success": "staff", "name": $scope.form.email });
                 $location.path("StudentDashboard");
                 window.location.reload(1);
             }
-        }, function (error) {console.log(error) });
+        }, function (error) { console.log(error) });
     };
 })

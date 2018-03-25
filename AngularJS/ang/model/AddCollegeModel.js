@@ -4,7 +4,6 @@ app.factory("AddCollegeFactory", function ($http, $q) {
         addCollege: function (form) {
             var def = $q.defer();
             $http({ "url": "http://127.0.0.1:3000/College", "method": "POST", "data": form }).then(function (res) {
-                console.log(res.data);
                 def.resolve(res.data);
             }, function (error) {
                 console.log(error);
@@ -15,7 +14,6 @@ app.factory("AddCollegeFactory", function ($http, $q) {
         list: function () {
             var def = $q.defer();
             $http({ "url": "http://127.0.0.1:3000/College", "method": "GET" }).then(function (res) {
-                console.log(res.data);
                 def.resolve(res.data);
             }, function (error) {
                 console.log(error);

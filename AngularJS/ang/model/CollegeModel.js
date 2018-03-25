@@ -4,7 +4,6 @@ app.factory("CollegeFactory", function ($http, $q) {
         CollegeStaffSignUp: function (form) {
             var def = $q.defer();
             $http({ "url": "http://127.0.0.1:3000/Student", "method": "POST", "data": form }).then(function (res) {
-                console.log(res.data);
                 def.resolve(res.data);
             }, function (error) {
                 console.log(error);
@@ -15,7 +14,6 @@ app.factory("CollegeFactory", function ($http, $q) {
         staffLogin: function (form) {
             var def = $q.defer();
             $http({ "url": "http://127.0.0.1:3000/StaffLogin", "method": "POST", "data": form }).then(function (res) {
-                console.log(res.data);
                 def.resolve(res.data);
             }, function (error) {
                 console.log(error);
@@ -26,7 +24,6 @@ app.factory("CollegeFactory", function ($http, $q) {
         list: function () {
             var def = $q.defer();
             $http({ "url": "http://127.0.0.1:3000/Student", "method": "GET" }).then(function (res) {
-                console.log(res.data);
                 def.resolve(res.data);
             }, function (error) {
                 console.log(error);
@@ -37,7 +34,6 @@ app.factory("CollegeFactory", function ($http, $q) {
         emailAuthenticate: function (form) {
             var def = $q.defer();
             $http({ "url": "http://127.0.0.1:3000/Emailauth", "method": "POST", "data": form }).then(function (res) {
-                console.log(res.data);
                 def.resolve(res.data);
             }, function (error) {
                 console.log(error);

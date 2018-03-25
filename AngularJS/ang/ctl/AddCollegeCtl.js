@@ -3,7 +3,6 @@ app.controller('AddCollegeCtl', function ($scope, AddCollegeFactory, $timeout, $
     $scope.form = { "operation": "add" };
 
     $scope.submit = function () {
-        console.log($scope.form);
         AddCollegeFactory.addCollege($scope.form).then(function (res) {
             $scope.successMessage = "College Added successfully";
             $scope.successMessagebool = true;
@@ -13,7 +12,6 @@ app.controller('AddCollegeCtl', function ($scope, AddCollegeFactory, $timeout, $
                 $location.path("AddCollege");
             }, 2000);
             $scope.response = res;
-         //   $scope.form = { "operation": "add" };
         }, function (error) { });
     };
 

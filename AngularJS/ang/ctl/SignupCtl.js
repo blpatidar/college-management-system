@@ -2,8 +2,7 @@ app.controller('SignupCtl', function ($scope, SignupFactory, $timeout, $location
     $scope.msg = "Student";
     $scope.form = { "operation": "add" };
     $scope.submit = function () {
-      
-        console.log($scope.form);
+
         SignupFactory.signup($scope.form).then(function (res) {
             $scope.successMessage = "Form submitted successfully";
             $scope.successMessagebool = true;
@@ -17,14 +16,12 @@ app.controller('SignupCtl', function ($scope, SignupFactory, $timeout, $location
         }, function (error) { });
     };
 
-   
+
     $scope.logincheck = function () {
         $scope.lform = { "operation": "userAuthenticate" };
         $scope.lform.login = $scope.form.login;
-        console.log($scope.lform);
         SignupFactory.userAuthenticate($scope.lform).then(function (res) {
             $scope.response = res;
-            console.log($scope.response);
             $scope.myForm.login.$setValidity('unique', $scope.response.success);
 
         }, function (error) { console.log(error) });
@@ -51,12 +48,12 @@ app.controller('SignupCtl', function ($scope, SignupFactory, $timeout, $location
         }, 20);
     };
     $scope.sort_with = function (base) {
-        
+
         $scope.base = base;
         $scope.reverse = !$scope.reverse;
     };
 
-  
+
 });
 
 

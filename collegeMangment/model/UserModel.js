@@ -70,7 +70,7 @@ class UserModel {
         });
     };
     authenticate(login, password) {
-        console.log("in authenticate");
+      
         return new Promise((resolve, reject) => {
             var sql = "SELECT * FROM st_users where login='" + login + "' and password= '" + password + "'"
             Datasource.executeList(sql).then(response => {
@@ -81,7 +81,7 @@ class UserModel {
         });
     };
     userAuthenticate(login) {
-        console.log("in authenticate");
+      
         return new Promise((resolve, reject) => {
             var sql = "SELECT * FROM st_users where login='" + login + "'";
             console.log(sql);

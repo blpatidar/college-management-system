@@ -1,9 +1,8 @@
-app.controller('CollegeCtl', function ($scope, CollegeFactory,$timeout,$location) {
+app.controller('CollegeCtl', function ($scope, CollegeFactory, $timeout, $location) {
     $scope.msg = "College";
     $scope.form = { "operation": "add" };
 
     $scope.submit = function () {
-        console.log($scope.form);
         CollegeFactory.CollegeStaffSignUp($scope.form).then(function (res) {
             $scope.successMessage = "Form Submitted successfully";
             $scope.successMessagebool = true;
@@ -20,10 +19,8 @@ app.controller('CollegeCtl', function ($scope, CollegeFactory,$timeout,$location
     $scope.emailcheck = function () {
         $scope.lform = { "operation": "emailAuthenticate" };
         $scope.lform.email = $scope.form.email;
-        console.log($scope.lform);
         CollegeFactory.emailAuthenticate($scope.lform).then(function (res) {
             $scope.response = res;
-            console.log($scope.response);
             $scope.myForm.email.$setValidity('unique', $scope.response.success);
 
         }, function (error) { console.log(error) });

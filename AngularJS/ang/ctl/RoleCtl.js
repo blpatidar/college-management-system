@@ -3,7 +3,6 @@ app.controller('RoleCtl', function ($scope, RoleFactory,$timeout,$location) {
     $scope.form = { "operation": "add" };
 
     $scope.submit = function () {
-        console.log($scope.form);
         RoleFactory.addRole($scope.form).then(function (res) {
             $scope.successMessage = "Role Added successfully";
             $scope.successMessagebool = true;

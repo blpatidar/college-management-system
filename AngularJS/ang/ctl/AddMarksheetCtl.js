@@ -1,7 +1,6 @@
 app.controller('AddMarksheetCtl', function ($scope, AddMarksheetFactory, $timeout, $location) {
     $scope.form = { "operation": "add" };
     $scope.submit = function () {
-        console.log($scope.form);
         AddMarksheetFactory.addMarksheet($scope.form).then(function (res) {
             $scope.successMessage = "Marksheet Added successfully";
             $scope.successMessagebool = true;

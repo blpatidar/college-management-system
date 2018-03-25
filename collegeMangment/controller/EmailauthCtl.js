@@ -6,7 +6,6 @@ class EmailauthCtl extends BaseCtl {
     populateBean(req) {
 
         var emailId = req.body.email;
-        console.log(emailId);
         return {
             emailId: emailId
         }
