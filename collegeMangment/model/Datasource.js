@@ -8,7 +8,7 @@ var conn = mysql.createConnection({
 
 conn.connect(function (err) {
     if (err) throw err;
-    console.log("connected");
+    console.log("MySql server now connected");
 });
 
 class Datasource {
